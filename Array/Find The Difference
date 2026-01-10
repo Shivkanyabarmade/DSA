@@ -14,7 +14,11 @@ Explanation: 'e' is the letter that was added.
 
 
 algorithm: 
-
+Add ASCII values of all characters in s → sum_s
+2️⃣ Add ASCII values of all characters in t → sum_t
+3️⃣ Extra character exists in t → so sum_t > sum_s
+4️⃣ Subtract sums → sum_t - sum_s
+5️⃣ Convert result to char → this is the extra character
 
 
 solutions:
