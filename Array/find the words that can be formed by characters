@@ -1,4 +1,49 @@
+You are given an array of strings words and a string chars.
 
+A string is good if it can be formed by characters from chars (each character can only be used once for each word in words).
+
+Return the sum of lengths of all good strings in words.
+
+
+Count letters in chars
+
+Use charCount[26] to store how many times each letter appears.
+
+2️⃣ Initialize answer
+
+result = 0 to store total length.
+
+3️⃣ Loop through each word
+
+For every word, create wordCount[26].
+
+4️⃣ Count letters of the word
+
+Increase count for each character in that word.
+
+5️⃣ Compare counts
+
+If any letter in wordCount is more than charCount → word is invalid.
+
+6️⃣ Add length if valid
+
+If valid, add word.length() to result.
+
+7️⃣ Return result
+
+Final sum of lengths of all valid words.
+ 
+
+Example 1:
+
+Input: words = ["cat","bt","hat","tree"], chars = "atach"
+Output: 6
+Explanation: The strings that can be formed are "cat" and "hat" so the answer is 3 + 3 = 6.
+Example 2:
+
+Input: words = ["hello","world","leetcode"], chars = "welldonehoneyr"
+Output: 10
+Explanation: The strings that can be formed are "hello" and "world" so the answer is 5 + 5 = 10.
 
 
 
