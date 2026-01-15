@@ -1,10 +1,10 @@
 
-iven a 0-indexed string word and a character ch, reverse the segment of word that starts at index 0 and ends at the index of the first occurrence of ch (inclusive). If the character ch does not exist in word, do nothing.
+given a 0-indexed string word and a character ch, reverse the segment of word that starts at index 0 and ends at the index of the first occurrence of ch (inclusive). If the character ch does not exist in word, do nothing.
 
 For example, if word = "abcdefd" and ch = "d", then you should reverse the segment that starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
 Return the resulting string.
 
- 
+ algorithm:
 
 Example 1:
 
@@ -23,15 +23,16 @@ You should not do any reverse operation, the resulting string is "abcd".
 
 
 
+Algorithm:
+Find the index of the first occurrence of character ch in the string and store it in j.
 
+Initialize a pointer i to 0.
 
+While i is less than j, swap the characters at positions i and j.
 
+Increment i and decrement j after each swap.
 
-
-
-
-
-
+After the loop ends, return the modified string.
 
 
 soln:
