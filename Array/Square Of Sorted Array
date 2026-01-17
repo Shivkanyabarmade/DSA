@@ -19,7 +19,7 @@ APPROACH: 1. square of the element
 
 TIME COMPLEXITY: O(N)
 
-SOLUTION:A
+SOLUTION:
 
 class Solution {
 public:
@@ -29,10 +29,12 @@ public:
 
       for(int i = 0;i<nums.size();i++){
         
-        nums[i]=nums[i]*nums[i];
+        nums[i]=(nums[i]*nums[i]);
          
          }  
+
          // step-2:sort the array
+
          sort(begin(nums), end(nums));
 
          return nums;
