@@ -24,15 +24,44 @@ Only 1771 contains an even number of digits.
 
 algorithm:
 
+Get the size of the array nums and store it in n.
 
+Initialize a counter result to 0 to count valid numbers.
 
+Loop through each element of the array from index 0 to n-1.
 
-approach:
+For every number:
 
+Check if it has even number of digits by using value ranges:
 
+2 digits → between 10 and 99
 
+4 digits → between 1000 and 9999
+
+6 digits → equal to 100000
+
+If the number matches any of these conditions, increment result.
+
+After the loop ends, return result
 
 
 
 
 solution:
+
+class Solution {
+public:
+    int findNumbers(vector<int>& nums) {
+        int n =nums.size();
+
+        int result = 0;
+
+        for(int i =0; i<n; i++){
+            if((nums[i]>=10 && nums[i]<=99) || (nums[i]>=1000 && nums[i]<=9999) || (nums[i]== 100000)){
+                result++;
+            }
+        }
+          return result;
+        
+    }
+};
