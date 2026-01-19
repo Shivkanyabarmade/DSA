@@ -14,8 +14,32 @@ Input: strs = ["dog","racecar","car"]
 Output: ""
 Explanation: There is no common prefix among the input strings.
 
+ALGORITHM:
 
+
+
+
+
+APPROACH:Take the first string as the initial prefix.
+Compare this prefix with every other string.
+Shorten the prefix until it matches the beginning of the current string.
+If prefix becomes empty → return "".
+Why this works?
+A common prefix must be a prefix of the first string.
+Reducing it step by step guarantees correctness.
 
 solution:
 
+
+
+
+
+
+Time Complexity: O(n * m)
+
+n = number of strings
+
+m = length of the prefix
+
+Space Complexity: O(1) (no extra space used)
 
