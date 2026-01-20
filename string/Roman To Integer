@@ -27,6 +27,14 @@ Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 
+APPROACH: 
+Roman numerals are normally added.
+But when a smaller value comes before a bigger value, we subtract it.
+
+IV → I(1) < V(5) → 5 - 1 = 4
+
+VI → V(5) > I(1) → 5 + 1 = 6
+
 
 ALGORITHM: Create a map to store Roman symbols with their integer values.
 
