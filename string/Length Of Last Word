@@ -21,6 +21,25 @@ Input: s = "luffy is still joyboy"
 Output: 6
 Explanation: The last word is "joyboy" with length 6.
 
+The last word is at the end of the string, not the beginning.
+There may be spaces after the last word, so skip them first.
+Once we reach a letter, start counting characters.
+Stop counting when:
+We reach a space ' ' OR
+We reach the beginning of the string.
+
+ALGORITHM:
+Let index i to last index of string.
+Initialize length = 0.
+While s[i] is a space:
+Decrement i (skip spaces).
+While i >= 0 and s[i] is not a space:
+Increment length
+Decrement i
+Return length.
+
+⏱ Time: O(n)
+📦 Space: O(1)
 
 
 SOLUTION::
