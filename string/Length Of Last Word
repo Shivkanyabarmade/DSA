@@ -24,3 +24,18 @@ Explanation: The last word is "joyboy" with length 6.
 
 
 SOLUTION::
+Class Solution {
+public:
+    int lengthOfLastWord(string s) {
+      int i = s.size()-1;
+      int length = 0;
+      while(s[i]== ' '){
+        i--;    
+          }
+      while(i>=0  && s[i]!=' '){
+        length++;
+        i--;
+      }
+      return length;
+    }
+};
