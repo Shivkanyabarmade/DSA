@@ -1,1 +1,56 @@
 
+Given an array of strings nums containing n unique binary strings each of length n, return a binary string of length n that does not appear in nums. If there are multiple answers, you may return any of them.
+
+ 
+Example 1:
+
+Input: nums = ["01","10"]
+Output: "11"
+Explanation: "11" does not appear in nums. "00" would also be correct.
+Example 2:
+
+Input: nums = ["00","01"]
+Output: "11"
+Explanation: "11" does not appear in nums. "10" would also be correct.
+Example 3:
+
+Input: nums = ["111","011","001"]
+Output: "101"
+Explanation: "101" does not appear in nums. "000", "010", "100", and "110" would also be correct.
+
+APPROACH:
+Start.
+
+Input vector of binary strings nums.
+
+Create empty string ans.
+
+For i = 0 to nums.size() - 1
+
+If nums[i][i] == '0' → append '1' to ans.
+
+Else → append '0' to ans.
+
+Return ans.
+
+End.
+
+Memory trick:
+ans[i] = opposite of nums[i][i] (flip the diagonal bit).
+
+CODE:
+class Solution {
+public:
+    string findDifferentBinaryString(vector<string>& nums) {
+        string ans= "";
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i][i]=='0')
+            ans = ans+'1';
+            else
+            ans = ans+'0';
+            
+            
+        }
+        return ans;
+    }
+};
