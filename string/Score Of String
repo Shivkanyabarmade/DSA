@@ -1,1 +1,59 @@
+You are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.
 
+Return the score of s.
+
+Example 1:
+
+Input: s = "code"
+
+Output: 24
+Explanation: The ASCII values of the characters in the given string are: 'c' = 99, 'o' = 111, 'd' = 100, and 'e' = 101. The score of s will be: |111 - 99| + |100 - 111| + |101 - 100|.
+
+Example 2:
+
+Input: s = "neetcode"
+
+Output: 65
+
+APPROACH:
+s[i] → current character
+s[i+1] → next character
+Subtract → ASCII difference
+abs() → make positive
+Add to score
+
+
+**Algorithm (based on given C++ code):**
+
+1. Define a class `Solution`.
+2. Inside the class, define a function `scoreOfString(string s)` that returns an integer.
+3. Initialize an integer variable `score = 0`.
+4. Start a loop with index `i = 0` and run it while `i < s.length() - 1`.
+5. For each iteration:
+
+   * Take characters `s[i]` and `s[i+1]`.
+   * Compute their ASCII difference: `s[i] - s[i+1]`.
+   * Take absolute value using `abs()`.
+   * Add the result to `score`.
+6. Repeat until the loop ends.
+7. Return the final value of `score`.
+
+Time & Space Complexity
+
+Time: O(n)
+
+Space: O(1)
+
+
+
+
+CODE: class Solution {
+public:
+    int scoreOfString(string s) {
+        int score = 0;
+        for(int i =0; i <s.length()-1; i++){
+           score = score + abs(s[i]-s[i+1]);
+        }
+        return score;
+    }
+};
