@@ -18,3 +18,27 @@ Output: false
 
 Explanation:
 All elements are distinct.
+
+SOLUTION: 
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> set;
+
+        for(int num : nums){
+            if(set.contains(num)){
+                return true;
+            }
+
+            set.insert(num);
+        }
+        return false;
+    }
+};
+
+
+
+Time complexity: O(N)
+Space complexity: O(N)
+
+
