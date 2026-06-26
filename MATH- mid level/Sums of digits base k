@@ -1,1 +1,51 @@
+Given an integer n (in base 10) and a base k, return the sum of the digits of n after converting n from base 10 to base k.
 
+After converting, each digit should be interpreted as a base 10 number, and the sum should be returned in base 10.
+
+ 
+
+Example 1:
+
+Input: n = 34, k = 6
+Output: 9
+Explanation: 34 (base 10) expressed in base 6 is 54. 5 + 4 = 9.
+Example 2:
+
+Input: n = 10, k = 10
+Output: 1
+Explanation: n is already in base 10. 1 + 0 = 1.
+
+ALGORITHM:
+Initialize sum = 0.
+While n > 0:
+Find the last base-k digit using n % k.
+Add it to sum.
+Update n = n / k.
+Return sum.
+
+soln:
+
+To find the sum of digits of n in base k, we do not need to convert the number into its base-k representation as a string.
+
+Instead:
+
+The last digit in base k is obtained by n % k.
+Add this digit to the answer.
+Remove the last digit by dividing n by k (n /= k).
+Repeat these steps until n becomes 0.
+
+This efficiently computes the required sum in logarithmic time.
+
+SOLUTION:  class Solution {
+public:
+    int sumBase(int n, int k) {
+        int sum = 0;
+         
+        while(n>0){
+            sum += n % k;
+            n /=k;
+        }
+
+        return sum;
+    }
+};
