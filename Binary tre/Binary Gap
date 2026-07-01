@@ -81,3 +81,8 @@ public:
     }
 };
 
+
+Complexity
+Time: O(log n) (checks each bit once)
+Space: O(1)
+
