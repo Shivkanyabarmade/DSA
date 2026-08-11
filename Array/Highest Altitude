@@ -1,1 +1,72 @@
 
+1732. There is a biker going on a road trip. The road trip consists of n + 1 points at various altitudes. The biker starts his trip on point 0 with altitude equal 0.
+
+You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i​​​​​​ and i + 1 for all (0 <= i < n). Return the highest altitude of a point.
+ 
+
+Example 1:
+
+Input: gain = [-5,1,5,0,-7]
+Output: 1
+Explanation: The altitudes are [0,-5,-4,1,1,-6]. The highest is 1.
+Example 2:
+
+Input: gain = [-4,-3,-2,-1,4,3,2]
+Output: 0
+Explanation: The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest is 0.
+
+APPROACH:
+Each gain[i] tells you how much the altitude changes when moving to the next point.
+For example:
+gain = [-5, 1, 5, 0, -7]
+Start:
+altitude = 0
+Then calculate step by step:
+0 + (-5) = -5
+-5 + 1   = -4
+-4 + 5   = 1
+1 + 0    = 1
+1 + (-7) = -6
+So altitudes are:
+0, -5, -4, 1, 1, -6
+Highest = 1
+
+ALGORITHM:
+🔹 Algorithm / Approach
+
+Use two variables:
+
+current → current altitude
+
+maxAltitude → highest altitude found so far
+Steps:
+Set current = 0
+Set maxAltitude = 0
+Traverse the gain array.
+For every gain[i]:
+Add it to current
+Compare current with maxAltitude
+Update maxAltitude if current is greater.
+Return MAxaltitude
+
+
+COde:
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int altitude = 0;
+        int maxAltitude = 0;
+
+         for(int i = 0; i< gain.length; i++) {
+            altitude = altitude + gain[i];
+
+            if(altitude > maxAltitude){
+            maxAltitude = altitude;
+         }
+         
+         
+         }
+          return maxAltitude;
+         
+    }
+}
+ 
